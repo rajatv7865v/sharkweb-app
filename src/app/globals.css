@@ -1,0 +1,58 @@
+@import "tailwindcss";
+
+:root {
+  --background: #F5F7FA;
+  --foreground: #1E1E1E;
+  /* Modern Tech color palette */
+  --header-primary: #0A84FF;
+  --header-primary-dark: #0B1739;
+  --header-accent: #00D8A4;
+  --header-accent-hover: #00C494;
+  --header-dark: #000000;
+  --header-dark-light: #0B1739;
+  --header-gray: #F5F7FA;
+  --header-gray-dark: #6b7280;
+  --header-text: #1E1E1E;
+  --header-text-light: #64748b;
+}
+
+@theme {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-poppins);
+  
+  /* Modern Tech color palette */
+  --color-header-primary: #0A84FF;
+  --color-header-primary-dark: #0B1739;
+  --color-header-accent: #00D8A4;
+  --color-header-accent-hover: #00C494;
+  --color-header-dark: #000000;
+  --color-header-dark-light: #0B1739;
+  --color-header-gray: #F5F7FA;
+  --color-header-gray-dark: #6b7280;
+  --color-header-text: #1E1E1E;
+  --color-header-text-light: #64748b;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-poppins), system-ui, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@keyframes blink {
+  0%, 50% {
+    opacity: 1;
+  }
+  51%, 100% {
+    opacity: 0;
+  }
+}
+
+.typewriter-cursor {
+  animation: blink 1s infinite;
+}
