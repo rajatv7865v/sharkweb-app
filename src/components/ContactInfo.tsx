@@ -77,7 +77,9 @@ export default function ContactInfo() {
           <h3 className="font-semibold text-header-text mb-4">Follow Us</h3>
           <div className="flex gap-4">
             <a
-              href="#"
+              href="https://www.linkedin.com/company/sharkwave/"
+              target="_blank"
+              rel="noopener noreferrer"
               className="w-10 h-10 bg-header-primary/10 rounded-lg flex items-center justify-center text-header-primary hover:bg-header-primary hover:text-white transition-colors"
               aria-label="LinkedIn"
             >

@@ -27,7 +27,9 @@ export default function Footer() {
             {/* Social Media */}
             <div className="flex gap-4 mb-6">
               <a
-                href="#"
+                href="https://www.linkedin.com/company/sharkwave/"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="w-10 h-10 bg-white rounded-lg flex items-center justify-center text-black hover:bg-gray-200 transition-colors"
                 aria-label="LinkedIn"
               >
