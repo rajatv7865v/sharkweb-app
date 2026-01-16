@@ -71,20 +71,43 @@ export default function Benefits() {
   }, [isVisible, steps.length]);
 
   return (
-    <section ref={sectionRef} className="py-20 bg-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section ref={sectionRef} className="py-20 lg:py-28 bg-white relative overflow-hidden">
+      {/* Background Pattern */}
+      <div className="absolute inset-0 opacity-5">
+        <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808008_1px,transparent_1px),linear-gradient(to_bottom,#80808008_1px,transparent_1px)] bg-[size:40px_40px]"></div>
+      </div>
+
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Section Header */}
+        <div className="text-center mb-16 lg:mb-20">
+          <div className="inline-flex items-center gap-2 bg-header-primary/10 text-header-primary px-5 py-2 rounded-full text-sm font-semibold mb-6 border border-header-primary/20">
+            <span>🚀</span>
+            <span>Our Capabilities</span>
+          </div>
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-black text-header-text mb-6 leading-tight">
+            What We Can
+            <br />
+            <span className="bg-gradient-to-r from-header-primary via-header-secondary to-header-accent bg-clip-text text-transparent">
+              Build For You
+            </span>
+          </h2>
+          <p className="text-lg md:text-xl text-header-text-light max-w-3xl mx-auto font-light leading-relaxed">
+            Explore our comprehensive range of data solutions and services
+          </p>
+        </div>
+
         {/* Horizontal Stepper */}
         <div className="relative">
           {/* Connecting Line (Desktop) */}
-          <div className="hidden lg:block absolute top-7 left-0 right-0 h-0.5 bg-gradient-to-r from-header-primary via-header-accent to-header-primary opacity-20">
+          <div className="hidden lg:block absolute top-10 left-0 right-0 h-1 bg-gradient-to-r from-header-primary/20 via-header-secondary/20 to-header-accent/20 rounded-full">
             <div 
-              className="h-full bg-header-accent transition-all duration-1000 ease-out"
+              className="h-full bg-gradient-to-r from-header-primary via-header-secondary to-header-accent rounded-full transition-all duration-1000 ease-out shadow-lg"
               style={{ width: `${((activeStep + 1) / steps.length) * 100}%` }}
             />
           </div>
 
           {/* Steps */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-6">
             {steps.map((step, index) => {
               const isActive = activeStep === index;
               const isPast = activeStep > index;
@@ -101,12 +124,12 @@ export default function Benefits() {
                   onClick={() => setActiveStep(index)}
                 >
                   {/* Step Number Badge */}
-                  <div className="flex items-center justify-center mb-4 relative z-10">
+                  <div className="flex items-center justify-center mb-6 relative z-10">
                     <div
-                      className={`w-14 h-14 rounded-full flex items-center justify-center font-bold text-base transition-all duration-500 ${
+                      className={`w-16 h-16 rounded-full flex items-center justify-center font-black text-lg transition-all duration-500 ${
                         isActive || isPast
-                          ? "bg-gradient-to-br from-header-primary to-header-accent text-white scale-110 shadow-xl ring-4 ring-header-primary/20"
-                          : "bg-white text-header-text-light border-2 border-gray-300 shadow-md"
+                          ? "bg-gradient-to-br from-header-primary via-header-secondary to-header-accent text-white scale-110 shadow-2xl ring-4 ring-header-primary/30"
+                          : "bg-white text-header-text-light border-2 border-gray-300 shadow-lg"
                       }`}
                     >
                       {isActive || isPast ? step.number : step.icon}
@@ -114,7 +137,7 @@ export default function Benefits() {
                   </div>
 
                   {/* Image Container */}
-                  <div className="relative h-48 rounded-2xl overflow-hidden mb-4 group-hover:scale-105 transition-transform duration-500 shadow-lg">
+                  <div className="relative h-56 rounded-3xl overflow-hidden mb-6 group-hover:scale-105 transition-transform duration-500 shadow-xl border border-gray-200/50">
                     <Image
                       src={step.image}
                       alt={step.title}
@@ -125,15 +148,15 @@ export default function Benefits() {
                     />
                     <div className={`absolute inset-0 bg-gradient-to-t transition-all duration-500 ${
                       isActive 
-                        ? "from-header-primary/60 via-header-primary/20 to-transparent" 
-                        : "from-black/40 via-black/20 to-transparent"
+                        ? "from-header-primary/70 via-header-primary/30 to-transparent" 
+                        : "from-black/50 via-black/30 to-transparent"
                     }`} />
                     {/* Icon Overlay */}
-                    <div className="absolute top-4 right-4 z-10">
-                      <div className={`w-10 h-10 rounded-lg backdrop-blur-sm flex items-center justify-center text-xl transition-all duration-300 ${
+                    <div className="absolute top-5 right-5 z-10">
+                      <div className={`w-12 h-12 rounded-xl backdrop-blur-md flex items-center justify-center text-2xl transition-all duration-300 border ${
                         isActive 
-                          ? "bg-white/90 shadow-lg scale-110" 
-                          : "bg-black/30 text-white"
+                          ? "bg-white/95 shadow-xl scale-110 border-white/50" 
+                          : "bg-black/40 text-white border-white/20"
                       }`}>
                         {step.icon}
                       </div>
@@ -143,15 +166,15 @@ export default function Benefits() {
                   {/* Step Content */}
                   <div className="text-center">
                     <h3
-                      className={`font-bold text-header-text mb-2 transition-all duration-300 ${
-                        isActive ? "text-header-primary text-lg" : "text-base"
+                      className={`font-black text-header-text mb-3 transition-all duration-300 ${
+                        isActive ? "text-header-primary text-xl" : "text-lg"
                       }`}
                     >
                       {step.title}
                     </h3>
                     <p
                       className={`text-header-text-light leading-relaxed transition-all duration-300 ${
-                        isActive ? "text-sm" : "text-xs"
+                        isActive ? "text-base" : "text-sm"
                       }`}
                     >
                       {step.description}
@@ -160,7 +183,7 @@ export default function Benefits() {
 
                   {/* Active Indicator (Mobile) */}
                   {isActive && (
-                    <div className="lg:hidden absolute -left-2 top-8 w-1 h-full bg-gradient-to-b from-header-primary to-header-accent rounded-full" />
+                    <div className="lg:hidden absolute -left-2 top-8 w-1 h-full bg-gradient-to-b from-header-primary via-header-secondary to-header-accent rounded-full" />
                   )}
                 </div>
               );
@@ -184,56 +207,25 @@ export default function Benefits() {
           </div>
         </div>
 
-        {/* Community Section */}
-        <div className="mt-20 text-center">
-          <div className="flex flex-col md:flex-row items-center justify-center gap-8 mb-12">
-            <a href="#" className="flex items-center gap-3 text-header-text hover:text-header-primary">
-              <span className="text-lg font-semibold">Join</span>
-              <span className="text-2xl font-bold">4,500+</span>
-              <span className="text-lg">on Slack</span>
-            </a>
-            <span className="text-header-gray-dark">|</span>
-            <a href="#" className="flex items-center gap-3 text-header-text hover:text-header-primary">
-              <span className="text-lg font-semibold">Chat and learn from other users</span>
-            </a>
-            <span className="text-header-gray-dark">|</span>
-            <a href="#" className="flex items-center gap-3 text-header-text hover:text-header-primary">
-              <span className="text-lg font-semibold">Contribute</span>
-              <span className="text-lg">on GitHub</span>
-            </a>
-            <span className="text-header-gray-dark">|</span>
-            <a href="#" className="flex items-center gap-3 text-header-text hover:text-header-primary">
-              <span className="text-lg">View code and issue tracker</span>
-            </a>
-          </div>
-        </div>
-
-        {/* Blog Section */}
-        <div className="mt-20 border-t border-gray-200 pt-12">
-          <div className="text-center mb-12">
-            <h2 className="text-2xl md:text-3xl font-bold text-header-text mb-4 italic">The latest in Sharkwave & data engineering</h2>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="bg-header-gray rounded-xl p-6 border border-gray-200 hover:shadow-lg transition-shadow">
-              <div className="text-sm text-header-text-light mb-2">Community</div>
-              <h3 className="text-xl font-bold text-header-text mb-2">Data consultants, are you already productizing your services?</h3>
+        {/* Stats Section */}
+        <div className="mt-24 text-center">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-4xl mx-auto">
+            <div className="bg-white rounded-2xl p-6 border border-gray-200/50 shadow-lg hover:shadow-xl transition-all hover:-translate-y-1">
+              <div className="text-3xl md:text-4xl font-black text-header-primary mb-2">500+</div>
+              <div className="text-sm text-header-text-light font-semibold">Projects Delivered</div>
             </div>
-            <div className="bg-header-gray rounded-xl p-6 border border-gray-200 hover:shadow-lg transition-shadow">
-              <div className="text-sm text-header-text-light mb-2">Product</div>
-              <h3 className="text-xl font-bold text-header-text mb-2">We're bringing powerful data engineering capabilities to software teams with Arch</h3>
+            <div className="bg-white rounded-2xl p-6 border border-gray-200/50 shadow-lg hover:shadow-xl transition-all hover:-translate-y-1">
+              <div className="text-3xl md:text-4xl font-black text-header-secondary mb-2">98%</div>
+              <div className="text-sm text-header-text-light font-semibold">Client Satisfaction</div>
             </div>
-            <div className="bg-header-gray rounded-xl p-6 border border-gray-200 hover:shadow-lg transition-shadow">
-              <div className="text-sm text-header-text-light mb-2">Data and Analytics</div>
-              <h3 className="text-xl font-bold text-header-text mb-2">Sharkwave by Sharkwave: September 2023 Edition</h3>
+            <div className="bg-white rounded-2xl p-6 border border-gray-200/50 shadow-lg hover:shadow-xl transition-all hover:-translate-y-1">
+              <div className="text-3xl md:text-4xl font-black text-header-accent mb-2">50+</div>
+              <div className="text-sm text-header-text-light font-semibold">Expert Team</div>
             </div>
-          </div>
-          <div className="text-center mt-8">
-            <a href="#" className="text-header-primary hover:text-header-primary-dark font-medium inline-flex items-center gap-2">
-              Get more data engineering insights
-              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-              </svg>
-            </a>
+            <div className="bg-white rounded-2xl p-6 border border-gray-200/50 shadow-lg hover:shadow-xl transition-all hover:-translate-y-1">
+              <div className="text-3xl md:text-4xl font-black text-header-primary mb-2">10+</div>
+              <div className="text-sm text-header-text-light font-semibold">Years Experience</div>
+            </div>
           </div>
         </div>
       </div>

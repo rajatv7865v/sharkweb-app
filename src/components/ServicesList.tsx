@@ -54,7 +54,7 @@ export default function ServicesList() {
         "DevOps Implementation",
         "Containerization & Kubernetes"
       ],
-      color: "from-cyan-500/20 to-cyan-500/5"
+      color: "from-header-primary/20 via-header-secondary/20 to-header-accent/20"
     },
     {
       title: "Digital Transformation",
@@ -68,7 +68,7 @@ export default function ServicesList() {
         "IoT Solutions",
         "Digital Strategy Consulting"
       ],
-      color: "from-green-500/20 to-green-500/5"
+      color: "from-header-secondary/20 via-header-accent/20 to-header-primary/20"
     },
     {
       title: "API Development & Integration",
@@ -82,7 +82,7 @@ export default function ServicesList() {
         "API Documentation",
         "Webhook Implementation"
       ],
-      color: "from-orange-500/20 to-orange-500/5"
+      color: "from-header-primary/20 via-header-secondary/20 to-header-accent/20"
     },
     {
       title: "DevOps & CI/CD",
@@ -96,7 +96,7 @@ export default function ServicesList() {
         "Monitoring & Logging",
         "Automated Testing"
       ],
-      color: "from-red-500/20 to-red-500/5"
+      color: "from-header-accent/20 via-header-primary/20 to-header-secondary/20"
     },
     {
       title: "UI/UX Design",
@@ -110,7 +110,7 @@ export default function ServicesList() {
         "Usability Testing",
         "Responsive Design"
       ],
-      color: "from-pink-500/20 to-pink-500/5"
+      color: "from-header-accent/20 to-header-accent/5"
     },
     {
       title: "Quality Assurance & Testing",
@@ -124,7 +124,7 @@ export default function ServicesList() {
         "Load Testing",
         "Test Automation Frameworks"
       ],
-      color: "from-teal-500/20 to-teal-500/5"
+      color: "from-header-secondary/20 to-header-secondary/5"
     },
     {
       title: "Maintenance & Support",
@@ -138,7 +138,7 @@ export default function ServicesList() {
         "Feature Enhancements",
         "System Monitoring"
       ],
-      color: "from-indigo-500/20 to-indigo-500/5"
+      color: "from-header-primary/20 via-header-secondary/20 to-header-primary/5"
     },
     {
       title: "Consulting Services",
@@ -152,7 +152,7 @@ export default function ServicesList() {
         "Technical Roadmap Planning",
         "Team Training & Mentoring"
       ],
-      color: "from-yellow-500/20 to-yellow-500/5"
+      color: "from-header-secondary/20 via-header-accent/20 to-header-secondary/5"
     },
     {
       title: "SaaS Development",
@@ -166,7 +166,7 @@ export default function ServicesList() {
         "User Management Systems",
         "Analytics & Reporting"
       ],
-      color: "from-emerald-500/20 to-emerald-500/5"
+      color: "from-header-primary/20 via-header-accent/20 to-header-secondary/20"
     }
   ];
 

@@ -92,7 +92,7 @@ export default function ContactForm() {
             value={formData.phone}
             onChange={handleChange}
             className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-header-primary focus:border-transparent outline-none transition-all"
-            placeholder="+1 (555) 123-4567"
+            placeholder="+91 7982332910"
           />
         </div>
         <div>

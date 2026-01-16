@@ -48,66 +48,100 @@ export default function Hero() {
   }, [displayText, isDeleting, currentSentenceIndex, sentences, typingSpeed]);
 
   return (
-    <section className="relative bg-white h-screen overflow-hidden flex items-center">
+    <section className="relative min-h-screen overflow-hidden flex items-center">
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
         <Image
           src="https://images.unsplash.com/photo-1485827404703-89b55fcc595e?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80"
           alt="AI and software technology background"
           fill
-          className="object-cover opacity-30"
+          className="object-cover"
           priority
           quality={90}
         />
-        {/* Overlay for better text readability */}
-        <div className="absolute inset-0 bg-gradient-to-b from-white/60 via-white/70 to-white/80 z-10"></div>
+        {/* Gradient Overlay */}
+        <div className="absolute inset-0 bg-gradient-to-br from-header-primary/90 via-header-primary/80 to-header-secondary/85 z-10"></div>
+        {/* Additional overlay for better text contrast */}
+        <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent z-10"></div>
+      </div>
+
+      {/* Animated Background Elements */}
+      <div className="absolute inset-0 z-10 overflow-hidden pointer-events-none">
+        {/* Gradient Orbs */}
+        <div className="absolute top-20 -left-20 w-96 h-96 bg-header-accent/20 rounded-full blur-3xl animate-pulse"></div>
+        <div className="absolute bottom-20 -right-20 w-[500px] h-[500px] bg-header-secondary/20 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }}></div>
       </div>
 
       {/* Content */}
-      <div className="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+      <div className="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full py-20">
         <div className="text-center">
-          <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-header-text mb-4 md:mb-6 leading-tight">
+          {/* Badge */}
+          <div className="inline-flex items-center gap-2 bg-white/20 backdrop-blur-md text-white px-5 py-2.5 rounded-full text-sm font-semibold mb-8 border border-white/30 shadow-lg">
+            <span className="w-2 h-2 bg-header-accent rounded-full animate-pulse"></span>
+            <span>Transform Your Business with Technology</span>
+          </div>
+
+          {/* Main Heading */}
+          <h1 className="text-4xl md:text-5xl lg:text-7xl font-black text-white mb-6 md:mb-8 leading-tight drop-shadow-lg">
             Build Software That
             <br />
-            <span className="text-header-primary italic font-normal inline-block min-h-[1.2em]">
-              {displayText}
-              <span className="typewriter-cursor ml-1 text-header-primary">|</span>
+            <span className="relative inline-block">
+              <span className="bg-gradient-to-r from-white via-header-accent to-white bg-clip-text text-transparent font-bold inline-block min-h-[1.2em]">
+                {displayText}
+              </span>
+              <span className="typewriter-cursor ml-2 text-white font-normal">|</span>
             </span>
           </h1>
-          <p className="text-sm md:text-base lg:text-lg text-header-text-light mb-6 md:mb-8 max-w-3xl mx-auto font-light leading-relaxed">
+
+          {/* Description */}
+          <p className="text-base md:text-lg lg:text-xl text-white/90 mb-10 md:mb-12 max-w-3xl mx-auto font-light leading-relaxed drop-shadow-md">
             Custom software development, cloud solutions, and digital transformation services that scale with your business.
           </p>
-          <div className="flex flex-col sm:flex-row gap-3 md:gap-4 justify-center items-center mb-8 md:mb-10">
+
+          {/* CTA Buttons */}
+          <div className="flex flex-col sm:flex-row gap-4 md:gap-5 justify-center items-center mb-16 md:mb-20">
             <a
               href="/contact"
-              className="bg-header-accent text-white px-6 md:px-8 py-3 md:py-4 rounded-full text-sm md:text-base font-medium hover:bg-header-accent-hover transition-colors inline-flex items-center shadow-lg hover:shadow-xl"
+              className="group relative bg-white text-header-primary px-8 md:px-10 py-4 md:py-5 rounded-full text-base md:text-lg font-bold hover:bg-white/95 transition-all duration-300 inline-flex items-center gap-2 shadow-2xl hover:shadow-[0_20px_50px_rgba(255,255,255,0.3)] hover:scale-105 transform overflow-hidden"
             >
-              Start Your Project
+              <span className="relative z-10">Start Your Project</span>
+              <svg className="w-5 h-5 relative z-10 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+              </svg>
             </a>
             <a
               href="/case-studies"
-              className="border-2 border-header-text text-header-text px-6 md:px-8 py-3 md:py-4 rounded-full text-sm md:text-base font-medium hover:bg-header-text hover:text-white transition-colors inline-flex items-center bg-white/80 backdrop-blur-sm"
+              className="group border-2 border-white/50 text-white px-8 md:px-10 py-4 md:py-5 rounded-full text-base md:text-lg font-bold hover:bg-white/10 hover:border-white transition-all duration-300 inline-flex items-center gap-2 bg-white/10 backdrop-blur-md shadow-lg hover:shadow-xl"
             >
-              View Case Studies
+              <span>View Case Studies</span>
+              <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M9 5l7 7-7 7" />
+              </svg>
             </a>
           </div>
           
           {/* Key Benefits */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 max-w-4xl mx-auto">
-            <div className="bg-white/60 backdrop-blur-sm rounded-xl p-4 md:p-6 border border-gray-200/50">
-              <div className="text-2xl md:text-3xl mb-2 md:mb-3">⚡</div>
-              <h3 className="font-semibold text-header-text mb-1 md:mb-2 text-sm md:text-base">Fast Delivery</h3>
-              <p className="text-xs md:text-sm text-header-text-light">Agile development process for rapid results</p>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 max-w-5xl mx-auto">
+            <div className="group bg-white/95 backdrop-blur-md rounded-2xl p-6 md:p-8 border border-white/20 hover:border-header-accent/50 hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 shadow-xl">
+              <div className="w-16 h-16 bg-gradient-to-br from-header-primary to-header-accent rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300 shadow-lg">
+                <div className="text-3xl">⚡</div>
+              </div>
+              <h3 className="font-bold text-header-text mb-2 text-lg">Fast Delivery</h3>
+              <p className="text-sm text-header-text-light leading-relaxed">Agile development process for rapid results</p>
             </div>
-            <div className="bg-white/60 backdrop-blur-sm rounded-xl p-4 md:p-6 border border-gray-200/50">
-              <div className="text-2xl md:text-3xl mb-2 md:mb-3">🔒</div>
-              <h3 className="font-semibold text-header-text mb-1 md:mb-2 text-sm md:text-base">Secure & Scalable</h3>
-              <p className="text-xs md:text-sm text-header-text-light">Enterprise-grade security and architecture</p>
+            <div className="group bg-white/95 backdrop-blur-md rounded-2xl p-6 md:p-8 border border-white/20 hover:border-header-accent/50 hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 shadow-xl">
+              <div className="w-16 h-16 bg-gradient-to-br from-header-primary to-header-accent rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300 shadow-lg">
+                <div className="text-3xl">🔒</div>
+              </div>
+              <h3 className="font-bold text-header-text mb-2 text-lg">Secure & Scalable</h3>
+              <p className="text-sm text-header-text-light leading-relaxed">Enterprise-grade security and architecture</p>
             </div>
-            <div className="bg-white/60 backdrop-blur-sm rounded-xl p-4 md:p-6 border border-gray-200/50">
-              <div className="text-2xl md:text-3xl mb-2 md:mb-3">🎯</div>
-              <h3 className="font-semibold text-header-text mb-1 md:mb-2 text-sm md:text-base">Result-Driven</h3>
-              <p className="text-xs md:text-sm text-header-text-light">Measurable outcomes that drive growth</p>
+            <div className="group bg-white/95 backdrop-blur-md rounded-2xl p-6 md:p-8 border border-white/20 hover:border-header-accent/50 hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 shadow-xl">
+              <div className="w-16 h-16 bg-gradient-to-br from-header-primary to-header-accent rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300 shadow-lg">
+                <div className="text-3xl">🎯</div>
+              </div>
+              <h3 className="font-bold text-header-text mb-2 text-lg">Result-Driven</h3>
+              <p className="text-sm text-header-text-light leading-relaxed">Measurable outcomes that drive growth</p>
             </div>
           </div>
         </div>

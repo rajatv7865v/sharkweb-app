@@ -8,13 +8,13 @@ export default function Logo() {
   if (logoExists) {
     return (
       <Link href="/" className="flex items-center group">
-        <div className="relative h-14 w-auto">
+        <div className="relative h-12 w-auto">
           <Image
             src="/logo.png"
             alt="Sharkwave Infotech"
             width={200}
-            height={56}
-            className="h-14 w-auto object-contain"
+            height={48}
+            className="h-12 w-auto object-contain"
             priority
           />
         </div>
@@ -24,41 +24,39 @@ export default function Logo() {
 
   return (
     <Link href="/" className="flex items-center group">
-      <div className="relative h-14 w-auto">
-        {/* Logo with white background matching the design */}
-        <div className="relative h-14 w-64 bg-white rounded-xl flex items-center justify-start px-6 overflow-hidden shadow-lg group-hover:shadow-xl transition-all duration-300 border border-gray-200 group-hover:border-gray-300">
-          <div className="flex items-center gap-3">
-            {/* Logo Icon/Shape */}
-            <div className="relative flex-shrink-0">
-              <div className="w-10 h-10 bg-gradient-to-br from-header-primary via-header-accent to-header-primary-dark rounded-lg flex items-center justify-center shadow-md group-hover:scale-110 transition-transform duration-300">
-                <span className="text-white font-black text-lg leading-none" style={{ fontFamily: 'system-ui, sans-serif' }}>S</span>
-              </div>
+      <div className="relative h-12 w-auto">
+        {/* Professional Logo Design */}
+        <div className="relative h-12 flex items-center gap-3 group-hover:gap-3.5 transition-all duration-300">
+          {/* Logo Icon/Shape */}
+          <div className="relative flex-shrink-0">
+            <div className="w-11 h-11 bg-gradient-to-br from-header-primary via-header-secondary to-header-accent rounded-xl flex items-center justify-center shadow-lg group-hover:shadow-xl group-hover:scale-105 transition-all duration-300 ring-2 ring-white/50">
+              <span className="text-white font-black text-xl leading-none" style={{ fontFamily: 'system-ui, sans-serif' }}>S</span>
             </div>
-            
-            {/* Logo Text */}
-            <div className="flex flex-col items-start justify-center leading-tight">
-              <span 
-                className="text-black font-black text-xl tracking-tighter uppercase"
-                style={{ 
-                  fontFamily: 'system-ui, -apple-system, sans-serif',
-                  letterSpacing: '-0.5px',
-                  fontWeight: 900,
-                  lineHeight: '1.1'
-                }}
-              >
-                SHARKWAVE
-              </span>
-              <span 
-                className="text-header-text-light text-[10px] font-semibold tracking-widest uppercase mt-0.5"
-                style={{ 
-                  fontFamily: 'system-ui, -apple-system, sans-serif',
-                  letterSpacing: '1.5px',
-                  fontWeight: 600
-                }}
-              >
-                INFOTECH
-              </span>
-            </div>
+          </div>
+          
+          {/* Logo Text */}
+          <div className="flex flex-col items-start justify-center leading-tight">
+            <span 
+              className="text-header-text font-black text-xl tracking-tight uppercase group-hover:text-header-primary transition-colors duration-300"
+              style={{ 
+                fontFamily: 'system-ui, -apple-system, sans-serif',
+                letterSpacing: '-0.3px',
+                fontWeight: 900,
+                lineHeight: '1.1'
+              }}
+            >
+              SHARKWAVE
+            </span>
+            <span 
+              className="text-header-text-light text-[10px] font-bold tracking-wider uppercase mt-0.5 group-hover:text-header-text transition-colors duration-300"
+              style={{ 
+                fontFamily: 'system-ui, -apple-system, sans-serif',
+                letterSpacing: '1.2px',
+                fontWeight: 700
+              }}
+            >
+              INFOTECH
+            </span>
           </div>
         </div>
       </div>

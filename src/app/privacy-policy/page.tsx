@@ -58,7 +58,7 @@ export default function PrivacyPolicyPage() {
             <h2 className="text-3xl font-bold text-header-text mb-4 mt-12">Contact Us</h2>
             <p className="text-header-text-light mb-8 leading-relaxed">
               If you have any questions about this Privacy Policy, please contact us at{" "}
-              <a href="/contact" className="text-header-primary hover:underline">privacy@sharkwave.com</a>
+              <a href="/contact" className="text-header-primary hover:underline">sharkwave.infotech@gmail.com</a>
             </p>
           </div>
         </div>
